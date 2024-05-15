@@ -15,10 +15,10 @@ app.use(express.json());
 app.use('/api/auth',require('./routes/auth'))
 app.use('/api/notes',require('./routes/notes'))
 
-//Default Route
-// app.get('/',(req,res)=>{
-//     res.send("Hello World");
-// })
+// Default Route
+app.get('/',(req,res)=>{
+    res.send("Hello World");
+})
 
 app.listen(port,()=>{
     console.log(`iNoteBook listening at http://localhost:${port}`);
