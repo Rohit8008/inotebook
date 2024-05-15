@@ -13,9 +13,9 @@ const SignUp = (props) => {
     const handleSubmit = async (e) => {
         e.preventDefault();
         const { name, email, password, cpassword } = credentials;
-
+        let url = process.env.REACT_APP_B_URL;
         try {
-            const response = await fetch('http://localhost:5000/api/auth/createuser', {
+            const response = await fetch(url+'/api/auth/createuser', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
@@ -30,7 +30,7 @@ const SignUp = (props) => {
                 navigate('/');
                 props.showAlert('Account Created Successfully', 'success');
             } else {
-                props.showAlert('Invalid credentials', 'danger');
+                props.showAlert(json.error, 'danger');
             }
         } catch (error) {
             console.error('Error:', error);

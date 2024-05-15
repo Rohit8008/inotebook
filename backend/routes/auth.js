@@ -7,7 +7,7 @@ require("dotenv").config();
 const User = require('../models/User');
 const fetchuser = require('../middleware/fetchuser');
 
-const JWT_TOKEN = process.env.SECRETKEY;
+const JWT_TOKEN = process.env.SECRETKEY || "SecretKey";
 const router = express.Router();
 
 //Route 1: Create a User using : Post "/api/auth/createuser" , doest require auth
@@ -20,7 +20,8 @@ router.post('/createuser',[
     let success=false;
     const errors = validationResult(req);
     if (!errors.isEmpty()) {
-      return res.status(400).json({success, errors: errors.array() });
+        console.log(errors.array());
+      return res.status(400).json({success, error: "Fields Cant be Empty" });
     }
     try{
     //Check Wether the user with this email exist already
@@ -30,8 +31,6 @@ router.post('/createuser',[
     }
 
     if(req.body.password !=req.body.cpassword){
-        console.log(req.body.password);
-        console.log(req.body.cpassword);
         return res.status(400).json({success,error:"Password does't Match"});
     }
 
@@ -69,7 +68,8 @@ router.post('/login',[
     //if there are errors then return Bad Request and Errors
     const errors = validationResult(req);
     if(!errors.isEmpty()){
-        return res.status(400).json({success,errors:errors.array()});
+        console.log(errors.array());
+        return res.status(400).json({success,error:"Fields can not be empty"});
     }
 
     const {email,password} = req.body;

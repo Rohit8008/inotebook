@@ -25,7 +25,7 @@ router.post('/addnote', fetchuser, [
         //if there are errors, return bad request and the errors 
         const errors = validationResult(req);
         if (!errors.isEmpty()) {
-            return res.status(400).json({ success: false, errors: errors.array() });
+            return res.status(400).json({ success: false, error: "Fields Cant be Empty" });
         }
 
         const note = new Notes({

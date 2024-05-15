@@ -8,7 +8,8 @@ const Login = (props) => {
 
     const handleSubmit = async (e) => {
         e.preventDefault();
-        const response = await fetch("http://localhost:5000/api/auth/login", {
+        let url = process.env.REACT_APP_B_URL;
+        const response = await fetch(url+"/api/auth/login", {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
@@ -24,7 +25,7 @@ const Login = (props) => {
             navigate("/");
         }
         else {
-            props.showAlert("Invalid credentials", "danger");
+            props.showAlert(json.error, "danger");
         }
     }
 
