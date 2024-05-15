@@ -1,70 +1,95 @@
-# Getting Started with Create React App
+# iNoteBook
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Welcome to the iNoteBook GitHub repository!
 
-## Available Scripts
+iNoteBook is a personal notes app built using the MERN stack (MongoDB, Express.js, React, Node.js). It provides users with the ability to sign up or log in securely. Once logged in, users can create, view, edit, and manage their personal notes efficiently.User authentication is handled using JSON Web Tokens (JWT).
 
-In the project directory, you can run:
+## Installation
 
-### `npm start`
+### Frontend Setup
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+- Clone the repository:
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+```bash
+  git clone https://github.com/rohit8008/inotebook.git
+```
+- Navigate to the project directory:
+```bash
+  cd inotebook
+```
+- Navigate to the frontend directory:
+```bash
+  cd frontend
+```
+- Install dependencies:
+```bash
+  npm install
+```
+- Create `.env` file under inotebook directory
+- Define following under `.env` file
+```.env
+  REACT_APP_B_URL=URL_ON_WHICH_YOU_WILL_RUN_BACKEND
+```
 
-### `npm test`
+### Backend Setup
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- Navigate to the project backend directory:
+```bash
+  cd inotebook/backend
+```
+- Install dependencies:
+```bash
+  npm install
+```
+- Create `.env` file under `inotebook/backend` directory
+- Define following under `.env` file
+```.env
+  PORTB=5000
+  MONGOURL=MongoDb UrL
+  SECRETKEY=Your Secret Key
+```
+## Usage
 
-### `npm run build`
+To start both the backend and frontend servers concurrently:
+```bash
+npm run both
+```
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+> [!IMPORTANT]
+> This script requires the concurrently package.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-### `npm run eject`
+## Features
+- User Authentication: The app supports user registration and login functionality. Each user has a unique set of credentials to access their notes securely.
+- Create and Edit Notes: Users can create new notes and edit existing ones. The app provides a user-friendly interface to compose and format notes with rich text editing capabilities.
+- Store Notes: The notes created by users are securely stored in the backend database, ensuring data persistence and accessibility across multiple sessions.
+- User-Specific Notes: Each user has their own set of notes associated with their account. This ensures privacy and organization for each user's personal notes.
+- Search and Filter: The app allows users to search and filter their notes based on keywords or categories, making it easy to find specific information.
+- Responsive Design: The frontend of the app is built using React, providing a responsive and interactive user interface that adapts to different devices and screen sizes.
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## Dependencies
+- Node version: >=20.11.0
+- Npm version: >=0.39.1
+- React version: 18.2
+- React Router DOM version: 6.21
+- MongoDB
+- Nodemon
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+## Tech Stack
 
-## Learn More
+**Client:** React, JSX, Bootstrap
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+**Server:** Node, Express
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+**Server:** MongoDB
 
-### Code Splitting
+**Authentication:** JSON Web Tokens (JWT)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+## Contributing
 
-### Analyzing the Bundle Size
+Contributions are always welcome!
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Please feel free to fork the repository and submit pull requests.
